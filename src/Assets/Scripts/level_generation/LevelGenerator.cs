@@ -39,7 +39,7 @@ class LevelGenerator : MonoBehaviour {
         HashSet<Vector3> half_dx = new HashSet<Vector3>();
 
         for (int i = 0; i < how_many; i++) {
-            half_sx.Add(new Vector3(UnityEngine.Random.Range(0.0f, width), UnityEngine.Random.Range(-height, height), 0.0f));
+            half_sx.Add(new Vector3(UnityEngine.Random.Range(0.1f, width), UnityEngine.Random.Range(-height, height), 0.0f));
         }
 
         // Simmetric
