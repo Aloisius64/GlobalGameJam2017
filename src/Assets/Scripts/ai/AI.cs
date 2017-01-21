@@ -18,33 +18,39 @@ public class AI : MonoBehaviour {
     }
 
     void Update() {
-        GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
+        GameObject[] coinsSX = GameObject.FindGameObjectsWithTag("CoinSX");
+        GameObject[] coinsDX = GameObject.FindGameObjectsWithTag("CoinDX");
+        List<GameObject> coins = new List<GameObject>();
+
+        coins.AddRange(coinsSX);
+        coins.AddRange(coinsDX);
+
         direction = getDirection(coins);
 
-        if (direction < 0) return;
-        
+        if (direction < 0)
+            return;
+
         float tmp = (float)(direction * Math.PI / 4.0f);
         force = new Vector2(Mathf.Cos(tmp), Mathf.Sin(tmp));
         rigidBody.AddForce(force * power);
     }
 
-    private boolean isMyCoin(item){
-        if (GameObject.tag.contains("sx") && item.transform.position.x <= 0)
+    private bool isMyCoin(GameObject item) {
+        if (gameObject.tag.Contains("SX") && item.transform.position.x <= 0)
             return true;
 
-        if (GameObject.tag.contains("dx") && item.transform.position.x >= 0)
+        if (gameObject.tag.Contains("DX") && item.transform.position.x >= 0)
             return true;
 
         return false;
     }
 
-    private int getDirection(GameObject[] coins) {
+    private int getDirection(List<GameObject> coins) {
         double min_distance = Double.MaxValue;
         GameObject min_item = null;
         foreach (var item in coins) {
 
-            if (isMyCoin(item))
-            {
+            if (isMyCoin(item)) {
                 float distance = (gameObject.transform.position - item.transform.position).magnitude;
 
                 if (distance < min_distance) {

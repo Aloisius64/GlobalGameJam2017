@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum eObjectType {
-    COIN = 0,
+    COIN_SX = 0,
+    COIN_DX,
     EXPLOSION,
     NUM_OBJECT_TYPE
 }
@@ -22,7 +23,8 @@ public class AssetsFactory {
             prefabs[i] = null;
         }
 
-        prefabPaths[(int)eObjectType.COIN] = "Prefabs/Coin";
+        prefabPaths[(int)eObjectType.COIN_SX] = "Prefabs/CoinSX";
+        prefabPaths[(int)eObjectType.COIN_DX] = "Prefabs/CoinDX";
         prefabPaths[(int)eObjectType.EXPLOSION] = "Prefabs/Explosion";
     }
 

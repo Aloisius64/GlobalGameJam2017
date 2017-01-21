@@ -21,10 +21,22 @@ class LevelGenerator : MonoBehaviour {
 
     void Update() {
         if (assetsPool.Loaded) {
-            List<Vector3> points = getLevel();
-            foreach (var item in points) {
+            HashSet<Vector3> half_sx = new HashSet<Vector3>();
+            HashSet<Vector3> half_dx = new HashSet<Vector3>();
+
+            getLevel(ref half_sx, ref half_dx);
+
+            foreach (var item in half_sx) {
                 GameObject point = null;
-                if (assetsPool.GetFreeObjectFromPool(eObjectType.COIN, out point)) {
+                if (assetsPool.GetFreeObjectFromPool(eObjectType.COIN_SX, out point)) {
+                    point.transform.position = item;
+                    point.transform.rotation = Quaternion.identity;
+                }
+            }
+
+            foreach (var item in half_dx) {
+                GameObject point = null;
+                if (assetsPool.GetFreeObjectFromPool(eObjectType.COIN_DX, out point)) {
                     point.transform.position = item;
                     point.transform.rotation = Quaternion.identity;
                 }
@@ -34,23 +46,16 @@ class LevelGenerator : MonoBehaviour {
         }
     }
 
-    public List<Vector3> getLevel() {
-        HashSet<Vector3> half_sx = new HashSet<Vector3>();
-        HashSet<Vector3> half_dx = new HashSet<Vector3>();
+    public void getLevel(ref HashSet<Vector3> half_sx, ref HashSet<Vector3> half_dx) {
 
         for (int i = 0; i < how_many; i++) {
-            half_sx.Add(new Vector3(UnityEngine.Random.Range(0.1f, width), UnityEngine.Random.Range(-height, height), 0.0f));
+            half_dx.Add(new Vector3(UnityEngine.Random.Range(0.1f, width), UnityEngine.Random.Range(-height, height), 0.0f));
         }
 
         // Simmetric
-        foreach (var item in half_sx) {
-            half_dx.Add(new Vector3(-item.x, item.y, 0.0f));
+        foreach (var item in half_dx) {
+            half_sx.Add(new Vector3(-item.x, item.y, 0.0f));
         }
 
-        List<Vector3> result = new List<Vector3>();
-        result.AddRange(half_sx);
-        result.AddRange(half_dx);
-
-        return result;
     }
 }

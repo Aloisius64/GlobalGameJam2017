@@ -91,14 +91,15 @@
     <Compile Include="Assets\External Assets\Mega Toon FX Free Pack\Script\SceneManager.cs" />
     <Compile Include="Assets\Scripts\AssetsFactory.cs" />
     <Compile Include="Assets\Scripts\AssetsPool.cs" />
+    <Compile Include="Assets\Scripts\BackToMenu.cs" />
     <Compile Include="Assets\Scripts\Buttons.cs" />
     <Compile Include="Assets\Scripts\Coin.cs" />
     <Compile Include="Assets\Scripts\DestroyExplosion.cs" />
     <Compile Include="Assets\Scripts\GameModality\IGameModality.cs" />
-    <Compile Include="Assets\Scripts\GameModality\ScoreModality.cs" />
-    <Compile Include="Assets\Scripts\GameModality\TimeModality.cs" />
+    <Compile Include="Assets\Scripts\GameModality\TimeScoreModality.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerExplosion.cs" />
+    <Compile Include="Assets\Scripts\TimeUpdater.cs" />
     <Compile Include="Assets\Scripts\Waves.cs" />
     <Compile Include="Assets\Scripts\ai\AI.cs" />
     <Compile Include="Assets\Scripts\ai\Item.cs" />

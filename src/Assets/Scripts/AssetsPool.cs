@@ -44,15 +44,19 @@ public class AssetsPool : MonoBehaviour {
 
     private IEnumerator LoadPrefabs() {
         // Setup maxValues
-        poolArrayMaxValues[(int)eObjectType.COIN] = 64;
+        poolArrayMaxValues[(int)eObjectType.COIN_SX] = 64;
+        poolArrayMaxValues[(int)eObjectType.COIN_DX] = 64;
         poolArrayMaxValues[(int)eObjectType.EXPLOSION] = 32;
 
         // Setup queues
-        poolArray[(int)eObjectType.COIN] = new Queue<GameObject>();
+        poolArray[(int)eObjectType.COIN_SX] = new Queue<GameObject>();
+        poolArray[(int)eObjectType.COIN_DX] = new Queue<GameObject>();
         poolArray[(int)eObjectType.EXPLOSION] = new Queue<GameObject>();
 
         // Populating queues with pooled objects
-        populateQueue(eObjectType.COIN, AssetsFactory.Instantiate(eObjectType.COIN, Vector3.zero, Quaternion.identity, coinContainer.transform));
+        populateQueue(eObjectType.COIN_SX, AssetsFactory.Instantiate(eObjectType.COIN_SX, Vector3.zero, Quaternion.identity, coinContainer.transform));
+        yield return null;
+        populateQueue(eObjectType.COIN_DX, AssetsFactory.Instantiate(eObjectType.COIN_DX, Vector3.zero, Quaternion.identity, coinContainer.transform));
         yield return null;
         populateQueue(eObjectType.EXPLOSION, AssetsFactory.Instantiate(eObjectType.EXPLOSION, Vector3.zero, Quaternion.identity, explosionContainer.transform));
         yield return null;
