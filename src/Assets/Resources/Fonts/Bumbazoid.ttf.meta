@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: dc0432d9b1a11574a9d17390834f7433
+timeCreated: 1484955841
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bumbazoid
+  fontNames:
+  - Bumbazoid
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: fcae50a4e28136f408c635bc7bdf3fcf
+timeCreated: 1484955841
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Water Park
+  fontNames:
+  - Water Park
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 60ff66d785bd9d740b5c521bdb428360
+timeCreated: 1484955841
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Pustule
+  fontNames:
+  - Pustule
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5060b557213ac0141a6b695a67a10262, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
