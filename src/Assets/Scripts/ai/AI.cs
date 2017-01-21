@@ -28,16 +28,31 @@ public class AI : MonoBehaviour {
         rigidBody.AddForce(force * power);
     }
 
+    private boolean isMyCoin(item){
+        if (GameObject.tag.contains("sx") && item.transform.position.x <= 0)
+            return true;
+
+        if (GameObject.tag.contains("dx") && item.transform.position.x >= 0)
+            return true;
+
+        return false;
+    }
+
     private int getDirection(GameObject[] coins) {
         double min_distance = Double.MaxValue;
         GameObject min_item = null;
         foreach (var item in coins) {
-            float distance = (gameObject.transform.position - item.transform.position).magnitude;
 
-            if (distance < min_distance) {
-                min_distance = distance;
-                min_item = item;
+            if (isMyCoin(item))
+            {
+                float distance = (gameObject.transform.position - item.transform.position).magnitude;
+
+                if (distance < min_distance) {
+                    min_distance = distance;
+                    min_item = item;
+                }
             }
+
         }
 
         if (min_item) {
