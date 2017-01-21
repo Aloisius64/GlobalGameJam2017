@@ -20,7 +20,7 @@ public class PlayerExplosion : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D coll) {
-        if (coll.gameObject.tag == "Player") {
+        if (coll.gameObject.tag.Contains("Player")) {
             Debug.Log("Boom!");
 
             foreach (ContactPoint2D missileHit in coll.contacts) {
@@ -32,7 +32,7 @@ public class PlayerExplosion : MonoBehaviour {
 
                 foreach (var item in colliders) {
                     if (item.tag == "Coin") {
-                        Debug.Log("Object: " + item.name);
+                        //Debug.Log("Object: " + item.name);
                         Rigidbody2D rigidBody = item.GetComponent<Rigidbody2D>();
                         
                         Vector2 coinPos = rigidBody.gameObject.transform.position;

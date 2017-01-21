@@ -12,7 +12,7 @@ public class Coin : MonoBehaviour {
     private GameObject playerTwoScoreBox;
 
     void OnCollisionEnter2D(Collision2D coll) {
-        if (coll.collider.tag == "Player") {
+        if (coll.collider.tag.Contains("Player")) {
             Destroy(gameObject);
 
             // Manage score

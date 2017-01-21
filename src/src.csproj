@@ -104,7 +104,7 @@
     <Compile Include="Assets\Scripts\ai\Item.cs" />
     <Compile Include="Assets\Scripts\ai\Player.cs" />
     <Compile Include="Assets\Scripts\level_generation\LevelGenerator.cs" />
-    <Compile Include="Assets\Scripts\level_generation\Point.cs" />
+    <Compile Include="Assets\Scripts\level_generation\PlayersGenerators.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\External Assets\ChainPack\Chain2D\README.txt" />
