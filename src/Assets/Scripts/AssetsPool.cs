@@ -10,10 +10,12 @@ public class AssetsPool : MonoBehaviour {
     [SerializeField]
     private GameObject explosionContainer = null;
 
-    private int[] poolArrayMaxValues = new int[(int)eObjectType.NUM_OBJECT_TYPE];
-    private Queue<GameObject>[] poolArray = new Queue<GameObject>[(int)eObjectType.NUM_OBJECT_TYPE];
+    private int[] poolArrayMaxValues;
+    private Queue<GameObject>[] poolArray;
 
     void Start() {
+        poolArrayMaxValues = new int[(int)eObjectType.NUM_OBJECT_TYPE];
+        poolArray = new Queue<GameObject>[(int)eObjectType.NUM_OBJECT_TYPE];
         StartCoroutine(LoadPrefabs());
     }
 
@@ -34,7 +36,7 @@ public class AssetsPool : MonoBehaviour {
     private IEnumerator LoadPrefabs() {
         // Setup maxValues
         poolArrayMaxValues[(int)eObjectType.COIN] = 10;
-        poolArrayMaxValues[(int)eObjectType.EXPLOSION] = 1;
+        poolArrayMaxValues[(int)eObjectType.EXPLOSION] = 10;
 
         // Setup queues
         poolArray[(int)eObjectType.COIN] = new Queue<GameObject>();

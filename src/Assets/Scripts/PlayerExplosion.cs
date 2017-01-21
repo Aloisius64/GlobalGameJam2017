@@ -9,6 +9,10 @@ public class PlayerExplosion : MonoBehaviour {
     private AssetsPool assetsPool = null;
     [SerializeField]
     private float explosionTime = 4.0f;
+    [SerializeField]
+    private float explosionRadius = 10.0f;
+    [SerializeField]
+    private float explosionPower = 10.0f;
 
     void Start() {
         manager = GameObject.FindGameObjectWithTag("Manager");
@@ -19,16 +23,29 @@ public class PlayerExplosion : MonoBehaviour {
         if (coll.gameObject.tag == "Player") {
             Debug.Log("Boom!");
 
-            GameObject explosionSystem = Instantiate(Resources.Load("Prefabs/Explosion")) as GameObject;
-
             foreach (ContactPoint2D missileHit in coll.contacts) {
                 Vector2 hitPoint = missileHit.point;
 
-                //Instantiate(explosionSystem, new Vector3(hitPoint.x, hitPoint.y, 0), Quaternion.identity);
-
                 StartCoroutine(ExplosionParticlesEffect(hitPoint));
+
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(hitPoint, explosionRadius);
+
+                foreach (var item in colliders) {
+                    if (item.tag == "Coin") {
+                        Debug.Log("Object: " + item.name);
+                        Rigidbody2D rigidBody = item.GetComponent<Rigidbody2D>();
+                        
+                        Vector2 coinPos = rigidBody.gameObject.transform.position;
+                        Vector2 dir = (coinPos - hitPoint);
+                        dir.Normalize();
+                        
+                        rigidBody.AddForce(dir * explosionPower);
+                    }
+                }
+
                 break;
             }
+
         }
     }
 
@@ -36,7 +53,7 @@ public class PlayerExplosion : MonoBehaviour {
         GameObject effect = null;
         if (assetsPool.GetFreeObjectFromPool(eObjectType.EXPLOSION, out effect)) {
             effect.transform.position = hitPoint;
-            gameObject.transform.rotation = Quaternion.identity;
+            effect.transform.rotation = Quaternion.identity;
             effect.GetComponent<ParticleSystem>().Play();
         }
 
