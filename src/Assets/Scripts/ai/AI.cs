@@ -1,62 +1,59 @@
-//using System;
-//using System.Collections.Generic;
-
-//public class AI
-//{
-
-//    public int direction { get; set; }
-
-//    public void run()
-//    { // This should be executed every N seconds
-
-//        Player me = getMyPlayer();
-//        List<Item> items = getItems();
-
-//        direction = getDirection(me, items);
-
-//    }
-
-//    private int getDirection(Player me, List<Item> items)
-//    {
-
-//        double min_distance = Double.MinValue;
-//        Item min_item = null;
-//        foreach (var item in items)
-//        {
-//            double distance = getDistance(me.x, me.y, item.x, item.y);
-
-//            if (distance < min_distance)
-//            {
-//                min_distance = distance;
-//                min_item = item;
-//            }
-
-//        }
-
-//        if (min_item != null)
-//        {
-//            double angle = getAngle(me.x, me.y, min_item.x, min_item.y);
-
-//            return (int)(angle / (Math.PI / 4));
-//        }
-
-//        return 0;
-//    }
-
-//    private double getAngle(int x1, int y1, int x2, int y2)
-//    {
-
-//        double angle = Math.Atan2(y2 - y1, x2 - x1);
-//        if (angle < 0) angle += 2 * Math.PI;
-
-//        return angle;
-
-//    }
+using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 
-    private double getDistance(int x1, int y1, int x2, int y2)
-    {
-        return Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2));
+public class AI : MonoBehaviour {
+
+    public int direction { get; set; }
+
+    Rigidbody2D rigidBody;
+    Vector2 force;
+    [SerializeField]
+    float power = 1.0f;
+
+    // Use this for initialization
+    void Start() {
+        rigidBody = GetComponent<Rigidbody2D>() as Rigidbody2D;
     }
 
+    void Update() {
+        GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
+        direction = getDirection(coins);
+
+        if (direction < 0) return;
+        
+        float tmp = (float)(direction * Math.PI / 4.0f);
+        force = new Vector2(Mathf.Cos(tmp), Mathf.Sin(tmp));
+        rigidBody.AddForce(force * power);
+    }
+
+    private int getDirection(GameObject[] coins) {
+        double min_distance = Double.MaxValue;
+        GameObject min_item = null;
+        foreach (var item in coins) {
+            float distance = (gameObject.transform.position - item.transform.position).magnitude;
+
+            if (distance < min_distance) {
+                min_distance = distance;
+                min_item = item;
+            }
+        }
+
+        if (min_item) {
+            double angle = getAngle(gameObject.transform.position.x, gameObject.transform.position.y,
+                min_item.transform.position.x, min_item.transform.position.y);
+
+            return (int)(angle / (Math.PI / 4));
+        }
+
+        return -1;
+    }
+
+    private double getAngle(float x1, float y1, float x2, float y2) {
+        double angle = Math.Atan2(y2 - y1, x2 - x1);
+        if (angle < 0)
+            angle += 2 * Math.PI;
+        return angle;
+    }
 }

@@ -13,6 +13,15 @@ public class AssetsPool : MonoBehaviour {
     private int[] poolArrayMaxValues;
     private Queue<GameObject>[] poolArray;
 
+    [SerializeField]
+    private bool loaded = false;
+
+    public bool Loaded {
+        get {
+            return loaded;
+        }
+    }
+
     void Start() {
         poolArrayMaxValues = new int[(int)eObjectType.NUM_OBJECT_TYPE];
         poolArray = new Queue<GameObject>[(int)eObjectType.NUM_OBJECT_TYPE];
@@ -35,8 +44,8 @@ public class AssetsPool : MonoBehaviour {
 
     private IEnumerator LoadPrefabs() {
         // Setup maxValues
-        poolArrayMaxValues[(int)eObjectType.COIN] = 10;
-        poolArrayMaxValues[(int)eObjectType.EXPLOSION] = 10;
+        poolArrayMaxValues[(int)eObjectType.COIN] = 64;
+        poolArrayMaxValues[(int)eObjectType.EXPLOSION] = 32;
 
         // Setup queues
         poolArray[(int)eObjectType.COIN] = new Queue<GameObject>();
@@ -47,6 +56,8 @@ public class AssetsPool : MonoBehaviour {
         yield return null;
         populateQueue(eObjectType.EXPLOSION, AssetsFactory.Instantiate(eObjectType.EXPLOSION, Vector3.zero, Quaternion.identity, explosionContainer.transform));
         yield return null;
+
+        loaded = true;
     }
 
     public bool GetFreeObjectFromPool(eObjectType objectType, out GameObject pooledObject) {

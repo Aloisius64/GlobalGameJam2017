@@ -99,9 +99,12 @@
     <Compile Include="Assets\Scripts\GameModality\TimeModality.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerExplosion.cs" />
+    <Compile Include="Assets\Scripts\Waves.cs" />
     <Compile Include="Assets\Scripts\ai\AI.cs" />
     <Compile Include="Assets\Scripts\ai\Item.cs" />
     <Compile Include="Assets\Scripts\ai\Player.cs" />
+    <Compile Include="Assets\Scripts\level_generation\LevelGenerator.cs" />
+    <Compile Include="Assets\Scripts\level_generation\Point.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\External Assets\ChainPack\Chain2D\README.txt" />
