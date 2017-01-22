@@ -19,19 +19,43 @@ Platform assembly: D:\GitHub\globalgamejam2017\release\JellyfishBox_Data\Managed
 Loading D:\GitHub\globalgamejam2017\release\JellyfishBox_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: D:\GitHub\globalgamejam2017\release\JellyfishBox_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading D:\GitHub\globalgamejam2017\release\JellyfishBox_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.141 seconds
+- Completed reload, in  0.139 seconds
 Platform assembly: D:\GitHub\globalgamejam2017\release\JellyfishBox_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\GitHub\globalgamejam2017\release\JellyfishBox_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.058666 ms
+UnloadTime: 1.978074 ms
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.062024 ms
+UnloadTime: 4.374913 ms
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 682.
-Total: 0.238617 ms (FindLiveObjects: 0.042666 ms CreateObjectMapping: 0.019358 ms MarkObjects: 0.163160 ms  DeleteObjects: 0.012641 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 678.
+Total: 0.230320 ms (FindLiveObjects: 0.040691 ms CreateObjectMapping: 0.017777 ms MarkObjects: 0.159209 ms  DeleteObjects: 0.011851 ms)
+
+Boom!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Boom!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Boom!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Boom!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Boom!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Boom!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Boom!
  
@@ -42,17 +66,17 @@ Game Over
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.010765 ms
+UnloadTime: 3.651950 ms
 
-Unloading 59 unused Assets to reduce memory usage. Loaded Objects now: 411.
-Total: 5.302913 ms (FindLiveObjects: 0.414419 ms CreateObjectMapping: 0.040296 ms MarkObjects: 0.367012 ms  DeleteObjects: 4.479604 ms)
+Unloading 59 unused Assets to reduce memory usage. Loaded Objects now: 407.
+Total: 3.648790 ms (FindLiveObjects: 0.050172 ms CreateObjectMapping: 0.032395 ms MarkObjects: 0.381234 ms  DeleteObjects: 3.184197 ms)
 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.620246 ms
+UnloadTime: 0.604444 ms
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 435.
-Total: 0.672000 ms (FindLiveObjects: 0.045432 ms CreateObjectMapping: 0.030419 ms MarkObjects: 0.440098 ms  DeleteObjects: 0.154864 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 431.
+Total: 0.669234 ms (FindLiveObjects: 0.043456 ms CreateObjectMapping: 0.030814 ms MarkObjects: 0.441283 ms  DeleteObjects: 0.152493 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3370 -> priority: 1 
-  Thread -> id: 15e4 -> priority: 1 
+  Thread -> id: 2798 -> priority: 1 
+  Thread -> id: 1d58 -> priority: 1 
