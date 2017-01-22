@@ -18,6 +18,16 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     float power = 1.0f;
 
+    public float Power {
+        get {
+            return power;
+        }
+
+        set {
+            power = value;
+        }
+    }
+
     // Use this for initialization
     void Start () {
         rigidBody = GetComponent<Rigidbody2D>() as Rigidbody2D;
@@ -41,6 +51,6 @@ public class PlayerController : MonoBehaviour {
             force.x -= 1.0f;
         }
         
-        rigidBody.AddForce(force * power);
+        rigidBody.AddForce(force * Power);
     }
 }

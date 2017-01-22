@@ -36,7 +36,7 @@ public class PlayerExplosion : MonoBehaviour {
                 Collider2D[] colliders = Physics2D.OverlapCircleAll(hitPoint, explosionRadius);
 
                 foreach (var item in colliders) {
-                    if (item.tag.Contains("Coin")) {
+                    if (item.tag.Contains("Coin") || item.tag.Contains("Player")) {
                         //Debug.Log("Object: " + item.name);
                         Rigidbody2D rigidBody = item.GetComponent<Rigidbody2D>();
                         
@@ -56,18 +56,20 @@ public class PlayerExplosion : MonoBehaviour {
 
     private IEnumerator ExplosionParticlesEffect(Vector2 hitPoint) {
         GameObject effect = null;
-        if (assetsPool.GetFreeObjectFromPool(eObjectType.EXPLOSION, out effect)) {
+        if (assetsPool && assetsPool.GetFreeObjectFromPool(eObjectType.EXPLOSION, out effect)) {
             effect.transform.position = hitPoint;
             effect.transform.rotation = Quaternion.identity;
             effect.GetComponent<ParticleSystem>().Play();
+            
+            // Play sound
+            audioPlayer.PlayOneShot(explosionClip);
+
+            yield return new WaitForSeconds(explosionTime);
+
+            assetsPool.FreeObjectPool(eObjectType.EXPLOSION, effect);
         }
-        
-        // Play sound
-        audioPlayer.PlayOneShot(explosionClip);
 
-        yield return new WaitForSeconds(explosionTime);
-
-        assetsPool.FreeObjectPool(eObjectType.EXPLOSION, effect);
+        yield return null;
     }
 
 }
