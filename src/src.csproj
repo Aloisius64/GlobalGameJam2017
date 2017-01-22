@@ -87,10 +87,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\External Assets\ChainPack\Chain2D\scripts\Chain.cs" />
-    <Compile Include="Assets\External Assets\ChainPack\Chain2D\scripts\ChainController.cs" />
-    <Compile Include="Assets\External Assets\ChainPack\Chain2D\scripts\Link.cs" />
-    <Compile Include="Assets\External Assets\ChainPack\scriptsOther\CutMouse.cs" />
     <Compile Include="Assets\External Assets\ExplosionForce2D\script\ExplosionForce2D.cs" />
     <Compile Include="Assets\External Assets\Mega Toon FX Free Pack\Script\AutoDestory.cs" />
     <Compile Include="Assets\External Assets\Mega Toon FX Free Pack\Script\CameraOrbit.cs" />
@@ -117,8 +113,6 @@
     <Compile Include="Assets\Scripts\level_generation\PlayersGenerators.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\External Assets\ChainPack\Chain2D\README.txt" />
-    <None Include="Assets\External Assets\ChainPack\README.txt" />
     <None Include="Assets\External Assets\Scifi Art Demo Pack\Demo Readme.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
