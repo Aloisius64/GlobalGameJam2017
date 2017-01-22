@@ -12,4 +12,8 @@ public class Buttons : MonoBehaviour {
     public void ExitButton() {
         Application.Quit();
     }
+
+    public void SetGameMode(int gameMode) {
+        GameModality.GameMode = (GameMode) gameMode;
+    }
 }
