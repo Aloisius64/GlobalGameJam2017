@@ -1,1 +1,1 @@
-Scrivi un file readme che spieghi come usare il codice per compilare il gioco.
+You just need to load the Unity Project

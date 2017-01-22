@@ -1,2 +1,1 @@
-Includi un file Readme che dica per quali sistemi è
-disponibile il gioco
+Platforms:MS Windows and Linux / Unix
